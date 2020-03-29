@@ -2,6 +2,9 @@ package guru.springframework.services;
 
 import guru.springframework.domain.Recipe;
 import guru.springframework.repositories.RecipeRepository;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -10,6 +13,7 @@ import java.util.Set;
 /**
  * Created by jt on 6/13/17.
  */
+@Data
 @Service
 public class RecipeServiceImpl implements RecipeService {
 
