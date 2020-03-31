@@ -18,7 +18,7 @@ public class IndexController {
     public IndexController(RecipeService recipeService) {
         this.recipeService = recipeService;
     }
-
+    Sagar
     @RequestMapping({"", "/", "/index"})
     public String getIndexPage(Model model) {
         log.debug("Getting Index page");
