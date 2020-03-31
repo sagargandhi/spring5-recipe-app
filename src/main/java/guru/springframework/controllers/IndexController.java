@@ -21,7 +21,7 @@ public class IndexController {
     Sagar
     @RequestMapping({"", "/", "/index"})
     public String getIndexPage(Model model) {
-        log.debug("Getting Index page");
+        log.debug("Getting Index page"d);
         log.info("Hello Sagar");
         model.addAttribute("recipes", recipeService.getRecipes());
 
