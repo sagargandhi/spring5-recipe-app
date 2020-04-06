@@ -63,6 +63,14 @@ public class RecipeControllerTest {
                 .andExpect(view().name("404error"));
     }
 
+
+    @Test
+    public void testNumberFormatException() throws Exception {
+        mockMvc.perform(get("/recipe/asfd/show"))
+                .andExpect(status().isBadRequest())
+                .andExpect(view().name("numberFormatError"));
+    }
+
     @Test
     public void testGetNewRecipeForm() throws Exception {
         RecipeCommand command = new RecipeCommand();

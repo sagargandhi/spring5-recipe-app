@@ -23,7 +23,7 @@ public class RecipeController {
         this.recipeService = recipeService;
     }
 
-    @GetMapping("/recipe/{id}/show")
+    @GetMapping("recipe/{id}/show")
     public String showById(@PathVariable String id, Model model){
 
         model.addAttribute("recipe", recipeService.findById(new Long(id)));
@@ -74,5 +74,12 @@ public class RecipeController {
 
 
         return modelAndView;
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(NumberFormatException.class)
+    public String handleNumberFormatException(Exception ex, Model model) {
+        model.addAttribute("exception", ex);
+        return "numberFormatError";
     }
 }
